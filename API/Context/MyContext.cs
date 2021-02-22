@@ -12,5 +12,7 @@ namespace API.Context
         public MyContext() : base("Tr_ConsumeAPI") { }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Account> Accounts { get; set; }
+
+        public System.Data.Entity.DbSet<API.Models.SignUp> SignUps { get; set; }
     }
 }

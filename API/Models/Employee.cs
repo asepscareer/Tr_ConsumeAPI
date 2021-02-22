@@ -20,7 +20,7 @@ namespace API.Models
         public string Email { get; set; }
         [Required(ErrorMessage = "Phone Number is required.")]
         [Display(Name = "Phone Number")]
-        [Phone]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Invalid Phone Number")]
         public string PhoneNumber { get; set; }
         [Display(Name = "Join Date")]
         [DataType(DataType.Date)]
