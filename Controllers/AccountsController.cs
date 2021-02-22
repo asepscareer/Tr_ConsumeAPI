@@ -32,31 +32,8 @@ namespace Tr_ConsumeAPI.Controllers
         [HttpPost]
         public ActionResult Create(SignIn signIn)
         {
-            HttpResponseMessage response = client.PostAsJsonAsync("Accounts", signIn).Result;
+            HttpResponseMessage response = client.PostAsJsonAsync("SignIn", signIn).Result;
             return RedirectToAction("Index");
         }
-
-        /*public ActionResult Edit(int Id)
-        {
-            IEnumerable<SignIn> signIns = null;
-            var responseTask = client.GetAsync("Employees");
-            responseTask.Wait();
-            var result = responseTask.Result;
-            if (result.IsSuccessStatusCode)
-            {
-                var readTask = result.Content.ReadAsAsync<IList<SignIn>>();
-                readTask.Wait();
-                signIns = readTask.Result;
-            }
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult Edit(SignIn signIn)
-        {
-            var put = client.PutAsJsonAsync<SignIn>("Accounts/" + signIn.Email, signIn);
-            put.Wait();
-            return RedirectToAction("Index");
-        }*/
     }
 }
