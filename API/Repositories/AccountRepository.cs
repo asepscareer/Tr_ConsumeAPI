@@ -22,7 +22,6 @@ namespace API.Repositories
         public int Create(SignIn signIn)
         {
             var SP_Con = "SP_SignIn";
-            parameters.Add("@Id", )
             parameters.Add("@Email", signIn.Email);
             parameters.Add("@Password", signIn.Password);
             var Create = connection.Execute(SP_Con, parameters, commandType: System.Data.CommandType.StoredProcedure);
