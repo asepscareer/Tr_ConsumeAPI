@@ -169,7 +169,6 @@
     <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SignInsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -188,8 +187,6 @@
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Repositories\Interface\IAccountRepository.cs" />
     <Compile Include="Repositories\Interface\IEmployeeRepository.cs" />
-    <Compile Include="Repositories\Interface\ISignInRepository.cs" />
-    <Compile Include="Repositories\SignInRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

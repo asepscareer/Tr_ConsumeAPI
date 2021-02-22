@@ -13,12 +13,12 @@ namespace API.Controllers
     public class EmployeesController : ApiController
     {
         EmployeeRepository employeeRepository = new EmployeeRepository();
-        // SignuP / Create
+        // Create
         public IHttpActionResult Post(SignUp signUp)
         {
             if (signUp.Name == null || signUp.Email == null || signUp.Password == null || signUp.PhoneNumber == null)
             {
-                return BadRequest("- Tidak boleh kosong");
+                return BadRequest("Tidak boleh kosong");
             }
             employeeRepository.Create(signUp);
             return Ok("Data sudah masuk!");

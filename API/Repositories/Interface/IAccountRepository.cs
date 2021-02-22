@@ -7,12 +7,9 @@ using System.Threading.Tasks;
 
 namespace API.Repositories.Interface
 {
-    interface IAccountRepository
+    public interface IAccountRepository
     {
-        IEnumerable<Account> Get();
-        Task<IEnumerable<Account>> GetById(int Id);
-        int Create(Account account);
-        int Update(Account account, int Id);
-        int Delete(int Id);
+        int Create(SignIn signIn);
+        int Update(SignIn signIn, int Id);
     }
 }
