@@ -9,7 +9,7 @@ namespace API.Context
 {
     public class MyContext : DbContext
     {
-        public MyContext() : base("Tr_ConsumeAPI") { }
+        public MyContext() : base("myConnection") { }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Account> Accounts { get; set; }
 

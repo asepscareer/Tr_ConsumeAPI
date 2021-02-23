@@ -27,8 +27,8 @@ namespace API.Controllers
         // Delete
         public IHttpActionResult Delete(int Id)
         {
-            var delete = employeeRepository.Delete(Id);
-            if (delete == 0)
+            var result = employeeRepository.Delete(Id);
+            if (result == 0)
             {
                 return NotFound();
             }
@@ -36,8 +36,8 @@ namespace API.Controllers
         }
         public IHttpActionResult Put(SignUp signUp, int Id)
         {
-            var put = employeeRepository.Update(signUp, Id);
-            if (put == 0)
+            var result = employeeRepository.Update(signUp, Id);
+            if (result == 0)
             {
                 return Content(HttpStatusCode.NotFound, "Data Tidak Ditemukan");
             }
@@ -45,23 +45,23 @@ namespace API.Controllers
         }
         public IHttpActionResult Get()
         {
-            var get = employeeRepository.Get();
-            if (get == null)
+            var result = employeeRepository.Get();
+            if (result == null)
             {
                 return Content(HttpStatusCode.BadRequest, "Terjadi Kesalahan");
             }
-            return Ok(get);
+            return Ok(result);
         }
         public async Task<IHttpActionResult> GetById(int id)
         {
-            var get = await employeeRepository.GetById(id);
-            if (get != null)
+            var result = await employeeRepository.GetById(id);
+            if (result != null)
             {
-                if (get.Count() == 0)
+                if (result.Count() == 0)
                 {
                     return Content(HttpStatusCode.NotFound, "Data Tidak Ditemukan");
                 }
-                return Ok(get);
+                return Ok(result);
             }
             return Content(HttpStatusCode.BadRequest, "Terjadi Kesalahan");
         }

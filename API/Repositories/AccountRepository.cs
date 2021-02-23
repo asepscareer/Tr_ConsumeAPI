@@ -22,7 +22,7 @@ namespace API.Repositories
         // SignUp
         public int Create(SignUp signUp)
         {
-            var SP_Con = "SP_InsertEmployee";
+            var spName = "SP_InsertEmployee";
             parameters.Add("@Name", signUp.Name);
             parameters.Add("@Email", signUp.Email);
             parameters.Add("@PhoneNumber", signUp.PhoneNumber);
@@ -30,7 +30,7 @@ namespace API.Repositories
             parameters.Add("@Salary", signUp.Salary);
             parameters.Add("@Password", signUp.Password);
 
-            var Create = connection.Execute(SP_Con, parameters, commandType: System.Data.CommandType.StoredProcedure);
+            var Create = connection.Execute(spName, parameters, commandType: System.Data.CommandType.StoredProcedure);
             return Create;
         }
     }

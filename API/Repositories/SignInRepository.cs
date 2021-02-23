@@ -18,11 +18,11 @@ namespace API.Repositories
 
         public int Create(SignIn signIn)
         {
-            var SP_Con = "SP_SignIn";
+            var spName = "SP_SignIn";
             parameters.Add("@Email", signIn.Email);
             parameters.Add("@Password", signIn.Password);
 
-            var Create = connection.Execute(SP_Con, parameters, commandType: System.Data.CommandType.StoredProcedure);
+            var Create = connection.Execute(spName, parameters, commandType: System.Data.CommandType.StoredProcedure);
             return Create;
         }
     }
