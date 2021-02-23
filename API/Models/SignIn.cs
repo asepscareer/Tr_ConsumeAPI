@@ -5,8 +5,7 @@ namespace API.Models
 {
     public class SignIn
     {
-        public List<Account> Accounts { get; set; }
-        public List<Employee> Employees { get; set; }
+        public int Id { get; set; }
         [Required(ErrorMessage = "Email is required.")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }

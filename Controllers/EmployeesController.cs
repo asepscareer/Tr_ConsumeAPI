@@ -66,8 +66,7 @@ namespace Tr_ConsumeAPI.Controllers
                 readTask.Wait();
                 signUps = readTask.Result;
             }
-            ViewBag.SupplierID = new SelectList(signUps, "Id", "Password");
-            return View();
+            return View(signUps.FirstOrDefault(s=> s.Id == Id));
         }
 
         [HttpPost]

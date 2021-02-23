@@ -10,6 +10,8 @@ namespace API.Models
     [Table("Tb_M_Employee")]
     public class Employee
     {
+        public string Password;
+
         [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Name is required.")]

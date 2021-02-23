@@ -12,24 +12,14 @@ namespace API.Controllers
     public class AccountsController : ApiController
     {
         AccountRepository accountRepository = new AccountRepository();
-        public IHttpActionResult Post(SignIn signIn)
+        public IHttpActionResult Post(SignUp signUp)
         {
-            if (signIn.Email == null || signIn.Password == null)
+            if (signUp.Name == null || signUp.Email == null || signUp.Password == null || signUp.PhoneNumber == null)
             {
                 return BadRequest("Tidak boleh kosong");
             }
-            accountRepository.Create(signIn);
-            return Ok("Berhasil Masuk");
+            accountRepository.Create(signUp);
+            return Ok("Data sudah masuk!");
         }
-        public IHttpActionResult Put(SignIn signIn, int Id)
-        {
-            var put = accountRepository.Update(signIn, Id);
-            if (put == 0)
-            {
-                return Content(HttpStatusCode.NotFound, "Data Tidak Ditemukan");
-            }
-            return Ok();
-        }
-
     }
 }

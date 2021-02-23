@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace API.Repositories.Interface
 {
-    public interface IAccountRepository
+    interface IsignInRepository
     {
-        int Create(SignUp signUp);
+        int Create(SignIn signIn);
     }
 }
