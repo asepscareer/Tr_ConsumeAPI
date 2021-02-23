@@ -1,14 +1,15 @@
 ﻿using API.Models;
+using API.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace API.Repositories.Interface
+namespace API.Repositories.Interfaces
 {
-    interface IsignInRepository
+    public interface IAccountRepository
     {
-        int Create(SignIn signIn);
+        int Create(SignUp signUp);
     }
 }

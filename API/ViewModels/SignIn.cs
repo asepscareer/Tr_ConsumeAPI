@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace API.Models
+namespace API.ViewModels
 {
     public class SignIn
     {

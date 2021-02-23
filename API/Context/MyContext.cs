@@ -13,6 +13,6 @@ namespace API.Context
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Account> Accounts { get; set; }
 
-        public System.Data.Entity.DbSet<API.Models.SignUp> SignUps { get; set; }
+        public System.Data.Entity.DbSet<API.ViewModels.SignUp> SignUps { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using API.Models;
 using API.Repositories;
+using API.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,7 +30,7 @@ namespace API.Controllers
             var delete = employeeRepository.Delete(Id);
             if (delete == 0)
             {
-                return BadRequest("Data Tidak Ditemukan");
+                return NotFound();
             }
             return Ok("Berhasil Delete");
         }

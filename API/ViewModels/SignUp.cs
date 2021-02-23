@@ -1,11 +1,12 @@
-﻿using System;
+﻿using API.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
-namespace API.Models
+namespace API.ViewModels
 {
     public class SignUp
     {
@@ -19,6 +20,7 @@ namespace API.Models
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Phone Number is required.")]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Invalid Phone Number")]
         [Display(Name = "Phone Number")]
         [Phone]
         public string PhoneNumber { get; set; }
